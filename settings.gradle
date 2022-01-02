@@ -1,0 +1,7 @@
+rootProject.name = 'spring-boot-axon-saga-pattern'
+include 'order-service'
+include 'product-service'
+include 'payment-service'
+include 'shipping-service'
+include 'common-service'
+
