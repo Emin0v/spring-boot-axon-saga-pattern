@@ -19,10 +19,9 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/3.0.12/cbbe1a62b0cc6c85972e99d52aaee350153dc530/istack-commons-runtime-3.0.12.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.activation/jakarta.activation/1.2.2/74548703f9851017ce2f556066659438019e7eb5/jakarta.activation-1.2.2.jar" />
         </processorPath>
+        <module name="spring-boot-axon-saga-pattern.order-service.main" />
         <module name="spring-boot-axon-saga-pattern.payment-service.main" />
         <module name="spring-boot-axon-saga-pattern.product-service.main" />
-        <module name="spring-boot-axon-saga-pattern.order-service.main" />
-        <module name="spring-boot-axon-saga-pattern.shipping-service.main" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
