@@ -4,5 +4,5 @@ import com.company.dto.ProductDto;
 
 public interface ProductService {
 
-    boolean createProduct(ProductDto dto);
+    String createProduct(ProductDto dto);
 }

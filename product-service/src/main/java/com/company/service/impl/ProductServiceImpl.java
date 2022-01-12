@@ -14,12 +14,12 @@ public class ProductServiceImpl implements ProductService {
     private final CommandGateway commandGateway;
 
     @Override
-    public boolean createProduct(ProductDto dto) {
-        return commandGateway.send(
+    public String createProduct(ProductDto dto) {
+        return commandGateway.sendAndWait(
                 CreateProductCommand.builder()
                         .name(dto.getName())
                         .count(dto.getCount())
                         .build()
-        ).isDone();
+        );
     }
 }

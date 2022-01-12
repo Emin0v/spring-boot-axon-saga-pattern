@@ -21,5 +21,5 @@ public class Product {
     private String name;
 
     @Positive
-    private String count;
+    private Integer count;
 }

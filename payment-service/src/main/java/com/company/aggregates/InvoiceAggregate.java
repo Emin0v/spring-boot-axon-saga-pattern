@@ -18,19 +18,27 @@ public class InvoiceAggregate {
     @AggregateIdentifier
     private String paymentId;
 
+    private String productUuid;
+
     private String orderId;
 
     private InvoiceStatus invoiceStatus;
 
     @CommandHandler
-    public InvoiceAggregate(CreateInvoiceCommand createInvoiceCommand){
-        AggregateLifecycle.apply(new InvoiceCreatedEvent(createInvoiceCommand.paymentId, createInvoiceCommand.orderId));
+    public InvoiceAggregate(CreateInvoiceCommand command){
+        AggregateLifecycle.apply(InvoiceCreatedEvent.builder()
+                .paymentId(command.getPaymentId())
+                .orderId(command.getPaymentId())
+                .productUuid(command.getProductUuid())
+                .build()
+        );
     }
 
     @EventSourcingHandler
-    protected void on(InvoiceCreatedEvent invoiceCreatedEvent){
-        this.paymentId = invoiceCreatedEvent.paymentId;
-        this.orderId = invoiceCreatedEvent.orderId;
+    protected void on(InvoiceCreatedEvent event){
+        this.paymentId = event.getPaymentId();
+        this.orderId = event.getOrderId();
+        this.productUuid = event.getProductUuid();
         this.invoiceStatus = InvoiceStatus.PAID;
 
     }

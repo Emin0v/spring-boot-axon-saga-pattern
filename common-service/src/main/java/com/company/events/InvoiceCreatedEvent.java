@@ -11,8 +11,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class InvoiceCreatedEvent {
 
-    public String paymentId;
+    private String paymentId;
 
-    public String orderId;
+    private String productUuid;
+
+    private String orderId;
 
 }

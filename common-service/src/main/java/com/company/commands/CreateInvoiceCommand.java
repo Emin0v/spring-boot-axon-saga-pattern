@@ -13,8 +13,10 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 public class CreateInvoiceCommand {
 
     @TargetAggregateIdentifier
-    public String paymentId;
+    private String paymentId;
 
-    public String orderId;
+    private String productUuid;
+
+    private String orderId;
 
 }
