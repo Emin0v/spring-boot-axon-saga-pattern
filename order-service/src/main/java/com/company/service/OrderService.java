@@ -2,8 +2,13 @@ package com.company.service;
 
 
 import com.company.dto.OrderCreateDto;
+import com.company.dto.OrderResponseDto;
+
+import java.util.concurrent.CompletableFuture;
 
 public interface OrderService {
 
-    boolean createOrder(OrderCreateDto orderCreateDto);
+    String createOrder(OrderCreateDto orderCreateDto);
+
+    CompletableFuture<OrderResponseDto> getOrder(String orderId);
 }

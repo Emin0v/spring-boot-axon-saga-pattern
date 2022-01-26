@@ -1,11 +1,20 @@
 version: '3.3'
 services:
+
+  mysql:
+    image: mysql:5.5
+    hostname: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306
+
   axonserver:
     image: axoniq/axonserver
     hostname: axonserver
     volumes:
-      - axonserver-data:/data
-      - axonserver-events:/eventdata
+#      - axonserver-data:/data
+#      - axonserver-events:/eventdata
       - axonserver-config:/config:ro
     ports:
       - '8024:8024'
@@ -15,9 +24,10 @@ services:
       - axon-demo
 
 volumes:
-  axonserver-data:
-  axonserver-events:
+#  axonserver-data:
+#  axonserver-events:
   axonserver-config:
+
 
 networks:
   axon-demo:

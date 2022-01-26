@@ -22,9 +22,10 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 	implementation "org.axonframework:axon-spring-boot-starter:$axonVersion"
     implementation 'javax.inject:javax.inject:1'
+    implementation "mysql:mysql-connector-java:$mysqlVersion"
 
 
-    testImplementation 'com.h2database:h2:1.3.148'
+
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
 

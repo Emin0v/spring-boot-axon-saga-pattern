@@ -54,6 +54,8 @@ public class OrderManagementSaga {
     @SagaEventHandler(associationProperty = "paymentId")
     public void handle(InvoiceCreatedEvent event){
 
+
+
         log.info("Invoice created event called in OrderManagementSaga");
 
     }
@@ -61,7 +63,7 @@ public class OrderManagementSaga {
     @SagaEventHandler(associationProperty = "productUuid")
     public void handle(StockUpdatedEvent event){
 
-
+        log.info("Updated stock event called in OrderManagementSaga");
 
     }
 

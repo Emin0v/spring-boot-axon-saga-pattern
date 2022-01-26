@@ -8,11 +8,13 @@ import com.company.query.FindProductQuery;
 import com.company.repository.ProductRepository;
 import com.company.service.adapter.ProductAdapter;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+@Slf4j
 @Component
 @RequiredArgsConstructor
 public class ProductProjector {
@@ -29,6 +31,8 @@ public class ProductProjector {
                 .build();
 
         productRepository.save(product);
+
+        log.info("productRepository save");
 
     }
 

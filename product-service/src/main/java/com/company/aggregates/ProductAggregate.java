@@ -48,6 +48,7 @@ public class ProductAggregate {
 
     @EventSourcingHandler
     public void on(ProductCreatedEvent event){
+        log.info("Product created event processing...");
         this.productUuid = event.getUuid();
         this.name = event.getName();
         this.count = event.getCount();

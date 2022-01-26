@@ -41,6 +41,7 @@ public class OrderAggregate {
 
     @EventSourcingHandler
     public void on(OrderCreatedEvent event){
+        log.info("Order created event processing ... in OrderAggregate");
         this.orderId = event.getOrderId();
         this.productUuid = event.getProductUuid();
         this.count = event.getCount();
